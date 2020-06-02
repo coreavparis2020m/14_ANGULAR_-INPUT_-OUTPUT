@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class JugadoresComponent implements OnInit {
 
     @Input() jugadores; // Esta propiedad recibirá valores desde su componente padre
+    @Input() equipo;
 
     constructor() { }
 

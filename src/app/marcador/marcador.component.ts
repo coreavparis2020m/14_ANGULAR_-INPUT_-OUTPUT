@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarcadorComponent implements OnInit {
 
+    partido = {
+        local: 'lakers',
+        visitante: 'celtics'
+    }
+
     locales = [
         {nombre: 'Isaiah Thomas', puntos: 0, imagen: 'assets/img/thomas.png'},
         {nombre: 'Kyle Kuzma', puntos: 0, imagen: 'assets/img/kuzma.png'},

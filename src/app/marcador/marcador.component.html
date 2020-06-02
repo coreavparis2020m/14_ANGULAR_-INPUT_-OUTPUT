@@ -1,3 +1,13 @@
-<app-jugadores [jugadores]="locales"></app-jugadores>
-<app-jugadores [jugadores]="visitantes"></app-jugadores>
-<!-- TEST -->
+<div class="marcador">
+    <img src="assets/img/LAL.svg">
+    <div>
+        <span>00</span>
+        <img src="assets/img/NBA_Logo.svg">
+        <span>00</span>
+    </div>
+    <img src="assets/img/BOS.svg">
+</div>
+<div class="jugadores">
+    <app-jugadores [jugadores]="locales" [equipo]="partido.local"></app-jugadores>
+    <app-jugadores [jugadores]="visitantes" [equipo]="partido.visitante"></app-jugadores>
+</div>
