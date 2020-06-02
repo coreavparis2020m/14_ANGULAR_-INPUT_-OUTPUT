@@ -31,7 +31,10 @@ export class MarcadorComponent implements OnInit {
     topJugadores = [];
 
     puntosLocales = 0;
+    puntosLocalesFormat = '00';
     puntosVisitantes = 0;
+    puntosVisitantesFormat = '00';
+
 
     constructor() { }
 
@@ -41,10 +44,40 @@ export class MarcadorComponent implements OnInit {
 
     getCanastaLocal(canasta) {
         this.puntosLocales += canasta.puntos;
+        this.formatPuntos();
+        this.locales.forEach(elem => {
+            if (elem.nombre === canasta.nombre) {
+                elem.puntos += canasta.puntos;
+            }
+        });
+        this.updateTopScore();
     }
 
     getCanastaVisitante(canasta) {
         this.puntosVisitantes += canasta.puntos;
+        this.formatPuntos();
+        this.visitantes.forEach(elem => {
+            if (elem.nombre === canasta.nombre) {
+                elem.puntos += canasta.puntos;
+            }
+        });
+        this.updateTopScore();
+    }
+
+    updateTopScore() {
+        this.topJugadores.sort((a, b) => {
+            return (b.puntos - a.puntos);
+        });
+    }
+
+    formatPuntos() {
+        if(this.puntosLocales > 99 || this.puntosVisitantes > 99) {
+            this.puntosLocalesFormat = ('0' + this.puntosLocales).slice(-3);
+            this.puntosVisitantesFormat = ('0' + this.puntosVisitantes).slice(-3);
+        } else {
+            this.puntosLocalesFormat = ('0' + this.puntosLocales).slice(-2);
+            this.puntosVisitantesFormat = ('0' + this.puntosVisitantes).slice(-2);
+        }
     }
 
 }
