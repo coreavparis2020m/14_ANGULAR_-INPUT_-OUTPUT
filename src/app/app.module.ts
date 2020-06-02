@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MarcadorComponent } from './marcador/marcador.component';
 import { JugadoresComponent } from './jugadores/jugadores.component';
+import { TopScoreComponent } from './top-score/top-score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarcadorComponent,
-    JugadoresComponent
+    JugadoresComponent,
+    TopScoreComponent
   ],
   imports: [
     BrowserModule

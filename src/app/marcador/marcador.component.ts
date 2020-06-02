@@ -28,9 +28,23 @@ export class MarcadorComponent implements OnInit {
         {nombre: 'Jonathan Gibson', puntos: 0, imagen: 'assets/img/gibson.png'}
     ]
 
-  constructor() { }
+    topJugadores = [];
 
-  ngOnInit() {
-  }
+    puntosLocales = 0;
+    puntosVisitantes = 0;
+
+    constructor() { }
+
+    ngOnInit() {
+        this.topJugadores = this.locales.concat(this.visitantes);
+    }
+
+    getCanastaLocal(canasta) {
+        this.puntosLocales += canasta.puntos;
+    }
+
+    getCanastaVisitante(canasta) {
+        this.puntosVisitantes += canasta.puntos;
+    }
 
 }
