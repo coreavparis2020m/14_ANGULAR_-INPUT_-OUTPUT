@@ -72,8 +72,8 @@ export class MarcadorComponent implements OnInit {
 
     formatPuntos() {
         if(this.puntosLocales > 99 || this.puntosVisitantes > 99) {
-            this.puntosLocalesFormat = ('0' + this.puntosLocales).slice(-3);
-            this.puntosVisitantesFormat = ('0' + this.puntosVisitantes).slice(-3);
+            this.puntosLocalesFormat = ('00' + this.puntosLocales).slice(-3);
+            this.puntosVisitantesFormat = ('00' + this.puntosVisitantes).slice(-3);
         } else {
             this.puntosLocalesFormat = ('0' + this.puntosLocales).slice(-2);
             this.puntosVisitantesFormat = ('0' + this.puntosVisitantes).slice(-2);
